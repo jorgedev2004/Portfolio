@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* --- CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --main-color: #00e5ff; /* Ciano */
+    --second-bg-color: #1a1a1a;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.section-titulo {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 4rem;
+}
+
+.section-titulo span {
+    color: var(--main-color);
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* --- SEÇÃO INÍCIO --- */
+.inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+.inicio-conteudo {
+    max-width: 60rem;
+}
+
+.inicio-conteudo h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.inicio-conteudo h1 {
+    font-size: 4.6rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.inicio-conteudo h2 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--main-color);
+}
+
+.inicio-conteudo p {
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
+
+.botoes {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: #333;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+.btn.btn-outline {
+    background: transparent;
+    color: var(--main-color);
+    border: .2rem solid var(--main-color);
+}
+.btn.btn-outline:hover {
+    background: var(--main-color);
+    color: #333;
+}
+
+.social-links {
+    margin-top: 4rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-right: 1.5rem;
+    transition: .5s ease;
+}
+
+.social-links a:hover {
+    background: var(--main-color);
+    color: #333;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.inicio-imagem {
+    position: relative;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.inicio-imagem img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+}
+
+.inicio-imagem::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+    box-shadow: 0 0 2rem var(--main-color);
+    animation: glow-rotate 5s linear infinite;
+    transform: translate(-50%, -50%); /* Centraliza o pseudo-elemento */
+}
+
+
+/* --- SEÇÃO EXPERIÊNCIA --- */
+.experiencia {
+    background-color: var(--second-bg-color);
+}
+
+.experiencia-container {
+    display: flex;
+    max-width: 100rem;
+    margin: 0 auto;
+    gap: 3rem;
+    background: var(--bg-color);
+    padding: 3rem;
+    border-radius: 1rem;
+    border-left: .5rem solid var(--main-color);
+}
+
+.experiencia-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.tab-link {
+    background: transparent;
+    border: .1rem solid var(--main-color);
+    color: var(--main-color);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+}
+
+.tab-link.active, .tab-link:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
+}
+
+.experiencia-conteudo {
+    flex: 3;
+}
+
+.conteudo-tab {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.conteudo-tab.active {
+    display: block;
+}
+
+.conteudo-tab h3 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.conteudo-tab span {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--main-color);
+}
+
+.conteudo-tab ul {
+    list-style: disc;
+    padding-left: 2rem;
+}
+
+.conteudo-tab li {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+/* --- SEÇÃO PROJETOS --- */
+
+.projetos {
+    background: var(--bg-color);
+}
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+}
+
+.projeto-card {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden; /* Essencial para o efeito funcionar bem */
+    display: flex;
+    cursor: pointer;
+    border: .2rem solid transparent; /* Borda fica transparente por padrão */
+    transition: border-color .5s ease;
+}
+
+.projeto-card:hover {
+    border-color: var(--main-color); /* Borda aparece no hover */
+}
+
+.projeto-card img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.projeto-card:hover img {
+    transform: scale(1.1); /* Efeito de zoom na imagem */
+    filter: blur(5px) brightness(0.7); /* Efeito de desfoque e escurecimento */
+}
+
+.projeto-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Camada escura semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    
+    /* Estado inicial: invisível e levemente diminuído */
+    opacity: 0;
+    transform: scale(0.9);
+    transition: .5s ease;
+}
+
+.projeto-card:hover .projeto-info {
+    /* Estado final no hover: visível e no tamanho normal */
+    opacity: 1;
+    transform: scale(1);
+}
+
+.projeto-info i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.projeto-info h4 {
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+.projeto-info p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+    color: #ddd;
+}
+
+/* --- SEÇÃO TECNOLOGIAS --- */
+.tecnologias {
+    background: var(--second-bg-color);
+}
+
+.tech-container {
+    max-width: 100rem;
+    margin: 0 auto;
+    background: var(--bg-color);
+    padding: 3rem;
+    border-radius: 1rem;
+    border-left: .5rem solid var(--main-color);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.tech-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-tab-link {
+    background: transparent;
+    border: .1rem solid var(--main-color);
+    color: var(--main-color);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    flex-grow: 1;
+    max-width: 20rem;
+    text-align: center;
+}
+
+.tech-tab-link.active, .tech-tab-link:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
+}
+
+.tech-conteudo-tab {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.tech-conteudo-tab.active {
+    display: block;
+}
+
+.tecnologias-icones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--second-bg-color);
+    padding: 1.5rem;
+    border-radius: 1.6rem;
+    border: .1rem solid var(--main-color);
+    transition: all 0.4s ease;
+    width: 13rem;
+    box-shadow: 0 0 1rem rgba(0,229,255,0.1);
+}
+
+.tech-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem var(--main-color);
+    animation: pulsar 1.5s infinite ease-in-out;
+}
+
+.tech-item img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.tech-item p {
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+}
+
+/* --- SEÇÃO SOBRE MIM --- */
+.sobre {
+    background-color: var(--bg-color);
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.sobre-imagem {
+    flex: 1 1 40rem;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 2rem;
+    border: .2rem solid var(--main-color);
+    box-shadow: 0 0 2rem rgba(0, 229, 255, 0.5);
+}
+
+.sobre-conteudo-texto {
+    flex: 1 1 60rem;
+}
+
+.sobre-conteudo-texto h3 {
+    font-size: 2.6rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.sobre-conteudo-texto p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* --- SEÇÃO CONTATO (RODAPÉ) --- */
+.contato {
+    min-height: auto;
+    padding: 4rem 9% 2rem;
+    text-align: center;
+    background: var(--second-bg-color);
+    border-top: .1rem solid var(--main-color);
+}
+
+.contato-icones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contato-icones a {
+    font-size: 4rem;
+    color: var(--main-color);
+    transition: .3s;
+}
+
+.contato-icones a:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 1rem var(--main-color);
+}
+
+.copyright {
+    font-size: 1.4rem;
+    color: #888;
+}
+
+/* --- ANIMAÇÕES (KEYFRAMES) --- */
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-2rem); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes glow-rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        box-shadow: 0 0 2rem var(--main-color);
+    }
+    50% {
+        box-shadow: 0 0 4rem var(--main-color);
+    }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .inicio {
+        flex-direction: column-reverse;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    .inicio-conteudo h1 {
+        font-size: 4rem;
+    }
+
+     .inicio-conteudo h2 {
+        font-size: 4.6rem;
+    }
+
+    .inicio-imagem {
+        width: 32rem;
+        height: 32rem;
+    }
+
+    .experiencia-container, 
+    .tech-container {
+        flex-direction: column;
+    }
+
+    .experiencia-tabs, 
+    .tech-tabs {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tech-tab-link {
+        flex-grow: unset;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Adicionar estilo de menu hamburguer aqui se desejar */
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .inicio-imagem {
+        width: 28rem;
+        height: 28rem;
+    }
+
+    .tecnologias-icones {
+        gap: 2rem;
+    }
+
+    .tech-item {
+        width: 11rem;
+        padding: 1rem;
+    }
+    
+    .tech-item img {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+/* --- Estilo para o cursor do efeito de digitação --- */
+.typed-cursor {
+    color: var(--main-color); /* Cor do cursor igual à cor de destaque */
+    font-size: 5.6rem; /* Tamanho do cursor igual ao do texto */
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
